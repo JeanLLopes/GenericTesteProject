@@ -9,13 +9,17 @@ namespace GenericTestProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Press ENTER to start!");
+
+            Console.ReadKey();
 
             List<Person> people = new List<Person>();
             List<Log> logs = new List<Log>();
 
             var peopleFile = @"C:\Users\JEAN-NOTE\AppData\Local\Temp\people.txt";
             var logFile = @"C:\Users\JEAN-NOTE\AppData\Local\Temp\log.txt";
+
+            PopulateLists(people, logs);
 
             /* New way of doing things - generics */
             GenericTextFileProcessor.SaveToTextFile<Person>(people, peopleFile);
@@ -37,7 +41,8 @@ namespace GenericTestProject
                 Console.WriteLine($"{ log.ErrorCode }: { log.Message } at { log.TimeOfEvent.ToShortTimeString() }");
             }
 
-
+            Console.WriteLine("Press ENTER to complete");
+            Console.ReadKey();
         }
 
         private static void PopulateLists(List<Person> people, List<Log> logs)
