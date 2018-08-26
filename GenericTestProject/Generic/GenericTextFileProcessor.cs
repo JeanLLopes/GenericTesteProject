@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace GenericTestProject.Generic
+namespace GenericTextProject.Generic
 {
-    public static class GenericTestFileProcessor
+    public static class GenericTextFileProcessor
     {
         public static List<T> LoadFromTextFile<T>(string filePath) where T : class, new()
         {
